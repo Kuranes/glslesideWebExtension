@@ -1,0 +1,14 @@
+[ignore]
+./ShaderEditor/codemirror
+./node_modules
+./.git/
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]

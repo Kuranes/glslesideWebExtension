@@ -1,0 +1,323 @@
+<html style="height: 100%">
+
+<head>
+
+    <!-- just codemirror... !-->
+    <link href="css/codemirror/codemirror.css" rel="stylesheet">
+
+    <link href="css/codemirror/theme/3024-day.css" rel="stylesheet">
+    <link href="css/codemirror/theme/3024-night.css" rel="stylesheet">
+    <link href="css/codemirror/theme/abcdef.css" rel="stylesheet">
+    <link href="css/codemirror/theme/ambiance.css" rel="stylesheet">
+    <link href="css/codemirror/theme/base16-dark.css" rel="stylesheet">
+    <link href="css/codemirror/theme/bespin.css" rel="stylesheet">
+    <link href="css/codemirror/theme/base16-light.css" rel="stylesheet">
+    <link href="css/codemirror/theme/blackboard.css" rel="stylesheet">
+    <link href="css/codemirror/theme/cobalt.css" rel="stylesheet">
+    <link href="css/codemirror/theme/colorforth.css" rel="stylesheet">
+    <link href="css/codemirror/theme/dracula.css" rel="stylesheet">
+    <link href="css/codemirror/theme/eclipse.css" rel="stylesheet">
+    <link href="css/codemirror/theme/elegant.css" rel="stylesheet">
+    <link href="css/codemirror/theme/erlang-dark.css" rel="stylesheet">
+    <link href="css/codemirror/theme/hopscotch.css" rel="stylesheet">
+    <link href="css/codemirror/theme/icecoder.css" rel="stylesheet">
+    <link href="css/codemirror/theme/isotope.css" rel="stylesheet">
+    <link href="css/codemirror/theme/lesser-dark.css" rel="stylesheet">
+    <link href="css/codemirror/theme/liquibyte.css" rel="stylesheet">
+    <link href="css/codemirror/theme/material.css" rel="stylesheet">
+    <link href="css/codemirror/theme/mbo.css" rel="stylesheet">
+    <link href="css/codemirror/theme/mdn-like.css" rel="stylesheet">
+    <link href="css/codemirror/theme/midnight.css" rel="stylesheet">
+    <link href="css/codemirror/theme/monokai.css" rel="stylesheet">
+    <link href="css/codemirror/theme/neat.css" rel="stylesheet">
+    <link href="css/codemirror/theme/neo.css" rel="stylesheet">
+    <link href="css/codemirror/theme/night.css" rel="stylesheet">
+    <link href="css/codemirror/theme/panda-syntax.css" rel="stylesheet">
+    <link href="css/codemirror/theme/paraiso-dark.css" rel="stylesheet">
+    <link href="css/codemirror/theme/paraiso-light.css" rel="stylesheet">
+    <link href="css/codemirror/theme/pastel-on-dark.css" rel="stylesheet">
+    <link href="css/codemirror/theme/railscasts.css" rel="stylesheet">
+    <link href="css/codemirror/theme/rubyblue.css" rel="stylesheet">
+    <link href="css/codemirror/theme/seti.css" rel="stylesheet">
+    <link href="css/codemirror/theme/solarized.css" rel="stylesheet">
+    <link href="css/codemirror/theme/the-matrix.css" rel="stylesheet">
+    <link href="css/codemirror/theme/tomorrow-night-bright.css" rel="stylesheet">
+    <link href="css/codemirror/theme/tomorrow-night-eighties.css" rel="stylesheet">
+    <link href="css/codemirror/theme/ttcn.css" rel="stylesheet">
+    <link href="css/codemirror/theme/twilight.css" rel="stylesheet">
+    <link href="css/codemirror/theme/vibrant-ink.css" rel="stylesheet">
+    <link href="css/codemirror/theme/xq-dark.css" rel="stylesheet">
+    <link href="css/codemirror/theme/xq-light.css" rel="stylesheet">
+    <link href="css/codemirror/theme/yeti.css" rel="stylesheet">
+    <link href="css/codemirror/theme/zenburn.css" rel="stylesheet">
+
+    <link href="css/codemirror/addon/matchesonscrollbar.css" rel="stylesheet">
+    <link href="css/codemirror/addon/dialog.css" rel="stylesheet">
+    <link href="css/codemirror/addon/foldgutter.css" rel="stylesheet">
+    <link href="css/codemirror/addon/show-hint.css" rel="stylesheet">
+    <link href="css/codemirror/addon/fullscreen.css" rel="stylesheet">
+    <style type="text/css">
+        .CodeMirror {
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        .CodeMirror-focused .cm-matchhighlight {
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFklEQVQI12NgYGBgkKzc8x9CMDAwAAAmhwSbidEoSQAAAABJRU5ErkJggg==);
+            background-position: bottom;
+            background-repeat: repeat-x;
+        }
+
+        .cm-comment {
+            color: #7f9f7f;
+        }
+
+        .cm-matchhighlight {
+            background-color: hsla(120, 60%, 70%, 0.3);
+        }
+
+        .CodeMirror-selection-highlight-scrollbar {
+            background-color: green
+        }
+    </style>
+
+    <!-- http://enjalot.github.io/Inlet/  !-->
+    <!-- <link href="css/inlet/inlet.css" rel="stylesheet">!-->
+
+
+    <!-- ui css !-->
+    <link href="css/widget/tree/vanillatree.css" rel="stylesheet">
+    <link href="css/editor.css" rel="stylesheet">
+
+</head>
+
+<body style="height: 100%" class="CodeMirror">
+
+    <div id="editor" class=" split-vertical">
+
+        <div id="doc" class="splitV content">
+
+            <div id="treedoc" class=" split-vertical">
+
+                <div id="assettree" class="splitH content">
+
+
+                </div>
+
+                <div id="doccontainer" class="splitH content container--tabs">
+                    <section class="row">
+                        <ul class="nav nav-tabs">
+
+                        </ul>
+
+                        <div class="tab-content">
+
+                            <div id="tabEdit" class="tab-pane active">
+
+                                <div id="editorContainer">
+
+                                    <div id="shadereditor-panel">
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div id="shadereditor-footer" class="footer">
+
+            <div>
+                <span style="float: left;" id="shader-common-buttons">
+
+
+                    <button id="shadereditor-format" title="Pretty print" class="go-format">
+                        <i class="fas fa-indent"></i>
+                    </button>
+                    <button id="shadereditor-optimise" title="Optimise" class="go-optimise">
+                        <i class="fas fa-angle-double-right"></i>
+                    </button>
+                    <button id="shadereditor-preprocess" title="Preprocess" class="go-preprocess">
+                        <i class="fas fa-angle-double-down"></i>
+                    </button>
+
+                    <button id="shadereditor-fullscreen" title="Go fullscreen" class="go-fullscreen">
+                        <i class="fas fa-arrows-alt"></i>
+                    </button>
+
+                    <button id="shadereditor-screenshot" title="Take Screenshot" class="go-screenshot">
+                        <i class="fas fa-camera-retro"></i>
+                    </button>
+                    <button id="shadereditor-startrecord" title="Record Movie" class="go-record">
+                        <i class="fas fa-video"></i>
+                    </button>
+                    <button id="shadereditor-benchmark" title="Benchmark" class="go-benchmark">
+                        <i class="fas fa-stopwatch"></i>
+                    </button>
+                    <button id="shadereditor-play" title="play" class="go-play">
+                        <i class="fas fa-play-circle"></i>
+                    </button>
+                    <button id="shadereditor-slow" title="slow" class="go-slow">
+                        <i class="fas fa-pause-circle"></i>
+                    </button>
+                    <button id="shadereditor-watch" title="Watch" class="go-watch">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                    <span id="shader-fragment-button">
+                        <button id="shadereditor-pick" title="Pick" class="go-pick">
+                            <i class="fas fa-eye-dropper"></i>
+                        </button>
+                        <!--
+                            <i class="fas fa-cube"></i>
+                            <i class="fas fa-image"></i>
+                        !-->
+                    </span>
+                    <button id="shadereditor-downloadStateRecord" title="download StateRecord" class="go-record">
+                        <i class="fas fa-circle"></i>
+                    </button>
+
+
+                </span>
+
+                <span style="float: left;" id='info-text-shader'></span>
+                <span id="shadereditor-count"></span>
+            </div>
+            <span style="display: block; width: 100%;">
+                <input id="actionAllFuzzy" class="actionAllFuzzy" style=" width: 100%;color: #dcdccc;    overflow-x: hidden;    overflow-y: hidden;    background-color: #3f3f3f;">
+            </span>
+        </div>
+
+        <div id="lowerpane" class="splitV content container--tabs" style="width:100%">
+
+            <section class="row">
+
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#tab-watch">watch</button>
+                    </li>
+                    <li class="">
+                        <a href="#tab-search">Search</button>
+                    </li>
+                    <li class="">
+                        <a href="#tab-settings">Settings</button>
+                    </li>
+                    <li class="">
+                        <a href="#tab-logs">Logs</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="tab-watch" class="tab-pane active">
+                        <div id="watch"></div>
+                    </div>
+                    <div id="tab-search" class="tab-pane">
+                        <div id="search"></div>
+                    </div>
+                    <div id="tab-lint" class="tab-pane ">
+                        <div id="lint"></div>
+                    </div>
+                    <div id="tab-texture" class="tab-pane ">
+                        <div id="textures"></div>
+                    </div>
+                    <div id="tab-settings" class="tab-pane ">
+
+                        <div id="settings">
+
+                            <p>
+                                <input type="checkbox" id="pixelRequest" value="pixelRequest"></input>
+                                <label for="highlightShaders">pixel inspector</label>
+                            </p>
+
+                            <p>
+                                <input type="checkbox" id="highlightShaders" value="highlightShaders"></input>
+                                <label for="highlightShaders">Highlight shaders</label>
+                            </p>
+
+                            <p>
+                                <input type="checkbox" id="monitorTextures" value="monitorTextures"></input>
+                                <label for="monitorTextures">Monitor textures</label>
+                            </p>
+
+                            <p>
+                                <input type="checkbox" id="logShaderEditor" value="logShaderEditor"></input>
+                                <label for="logShaderEditor">log gl Errors</label>
+                            </p>
+
+                            <p>
+                                <input type="checkbox" id="debugShaderEditor" value="debugShaderEditor"></input>
+                                <label for="debugShaderEditor">Debug Hooks</label>
+                            </p>
+                            <p>
+                                <select id="selectCodeMirrorTheme">
+                                    <option selected="">default</option>
+                                    <option>3024-day</option>
+                                    <option>3024-night</option>
+                                    <option>abcdef</option>
+                                    <option>ambiance</option>
+                                    <option>base16-dark</option>
+                                    <option>base16-light</option>
+                                    <option>bespin</option>
+                                    <option>blackboard</option>
+                                    <option>cobalt</option>
+                                    <option>colorforth</option>
+                                    <option>dracula</option>
+                                    <option>eclipse</option>
+                                    <option>elegant</option>
+                                    <option>erlang-dark</option>
+                                    <option>hopscotch</option>
+                                    <option>icecoder</option>
+                                    <option>isotope</option>
+                                    <option>lesser-dark</option>
+                                    <option>liquibyte</option>
+                                    <option>material</option>
+                                    <option>mbo</option>
+                                    <option>mdn-like</option>
+                                    <option>midnight</option>
+                                    <option>monokai</option>
+                                    <option>neat</option>
+                                    <option>neo</option>
+                                    <option>night</option>
+                                    <option>panda-syntax</option>
+                                    <option>paraiso-dark</option>
+                                    <option>paraiso-light</option>
+                                    <option>pastel-on-dark</option>
+                                    <option>railscasts</option>
+                                    <option>rubyblue</option>
+                                    <option>seti</option>
+                                    <option>solarized dark</option>
+                                    <option>solarized light</option>
+                                    <option>the-matrix</option>
+                                    <option>tomorrow-night-bright</option>
+                                    <option>tomorrow-night-eighties</option>
+                                    <option>ttcn</option>
+                                    <option>twilight</option>
+                                    <option>vibrant-ink</option>
+                                    <option>xq-dark</option>
+                                    <option>xq-light</option>
+                                    <option>yeti</option>
+                                    <option>zenburn</option>
+                                </select>
+                            </p>
+
+                        </div>
+                    </div>
+                    <div id="tab-logs" class="tab-pane ">
+                        <div id="log"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+    <!-- Test shader without locking/freezing editor !-->
+    <iframe id="shaderTest" src="testShaderIframe.html" width="1" height="1"></iframe>
+    <!-- BROWSER EXTENSION panel !-->
+    <script src="./shaderEditor.js"></script>
+</body>
+
+</html>

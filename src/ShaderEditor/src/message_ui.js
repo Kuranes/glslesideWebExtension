@@ -1,0 +1,3 @@
+function readSettings() {}
+
+function saveSettings() {}

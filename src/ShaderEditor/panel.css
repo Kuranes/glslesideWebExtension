@@ -1,0 +1,667 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+body,
+html {
+    font-family: sans-serif;
+    color: #dcdccc;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3f3f3f;
+    user-select: none;
+    cursor: default;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#reload {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+#list {
+    position: absolute;
+    left: 0;
+    width: 200px;
+    top: 0;
+    bottom: 25px;
+    listy-style-type: none;
+    background-color: #3f3f3f;
+    overflow: auto;
+}
+
+#list li {
+    padding: 5px 10px;
+    border-bottom: 1px solid #e5e5e5;
+    cursor: pointer;
+    position: relative;
+    height: 30px;
+}
+
+#list li:hover {
+    background-color: rgba(56, 121, 217, 0.1);
+}
+
+#list li.active {
+    background-color: rgb(56, 121, 217);
+    color: #dcdccc;
+}
+
+#list li span.visibility {
+    background-image: url(icons/check.svg);
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    bottom: 5px;
+}
+
+#list li span.name {
+    position: absolute;
+    left: 35px;
+    top: 5px;
+    right: 10px;
+    bottom: 5px;
+}
+
+#list li.hidden {
+    opacity: 0.25;
+}
+
+#editorContainer {
+    position: absolute;
+    left: 200px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #3f3f3f;
+}
+
+#shadereditor-panel,
+#shadereditor-panel {
+    transition: background-color 150ms ease-out;
+}
+
+#shadereditor-panel {
+    position: absolute;
+    left: 0;
+    right: 50%;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 50%;
+}
+
+#shadereditor-panel {
+    position: absolute;
+    left: 50%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 50%;
+}
+
+#shadereditor-panel.fullscreen,
+#shadereditor-panel.fullscreen {
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+#shaderEditor {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 25px;
+    height: calc(100% - 25px);
+    width: 100%;
+}
+
+#shaderEditor {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 25px;
+    height: calc(100% - 25px);
+    width: 100%;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 25px;
+    right: 0;
+    border-left: 1px solid #a6a6a6;
+}
+
+.footer p {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 45px;
+    overflow: hidden;
+    padding: 3px 5px;
+    #DCDCCC-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.errorMessage {
+    background-color: #b60000;
+    color: #dcdccc;
+    padding: 5px;
+}
+
+.warningMessage {
+    background-color: #ff8a00;
+    color: #dcdccc;
+    padding: 5px;
+}
+
+#waiting {
+    display: none;
+    color: #404040;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#info {
+    color: #404040;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#info h1 {
+    margin-bottom: 1em;
+}
+
+#info p {
+    margin-bottom: 1em;
+    line-height: 1.4em;
+}
+
+#info button {
+    margin-bottom: 1em;
+}
+
+#info a {
+    color: #4c9ed9;
+}
+
+#info a:hover {
+    color: rgb(138, 138, 138);
+}
+
+.fullscreen .go-fullscreen {
+    background-image: url(icons/fs_exit.svg);
+}
+
+.go-pick {
+    background-image: url(icons/ic_colorize_24px.svg);
+    width: 15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 205px;
+    background-size: 15px 15px;
+    cursor: pointer;
+}
+
+.go-watch {
+    background-image: url(icons/ic_watch_24px.svg);
+    width: 15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 185px;
+    background-size: 15px 15px;
+    cursor: pointer;
+}
+
+.go-screenshot {
+    background-image: url(icons/ic_camera_alt_24px.svg);
+    width: 15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 165px;
+    background-size: 15px 15px;
+    cursor: pointer;
+}
+
+.go-record {
+    background-image: url(icons/ic_fiber_manual_record_24px.svg);
+    width: 15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 145px;
+    background-size: 15px 15px;
+    cursor: pointer;
+}
+
+.go-benchmark {
+    background-image: url(icons/ic_timer_24px.svg);
+    width: 15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 125px;
+    background-size: 15px 15px;
+    cursor: pointer;
+}
+
+.go-play {
+    background-image: url(icons/ic_play_arrow_24px.svg);
+    width: 15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 105px;
+    background-size: 15px 15px;
+    cursor: pointer;
+}
+
+.go-slow {
+    background-image: url(icons/ic_slideshow_24px.svg);
+    width: 15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 85px;
+    background-size: 15px 15px;
+    cursor: pointer;
+}
+
+.go-format {
+    background-image: url(icons/format.svg);
+    width: 15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 65px;
+    background-size: 15px 15px;
+    cursor: pointer;
+}
+
+.go-optimise {
+    background-image: url(icons/ic_flash_on_24px.svg);
+    width: 15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 45px;
+    background-size: 15px 15px;
+    cursor: pointer;
+}
+
+.go-preprocess {
+    background-image: url(icons/ic_vertical_align_bottom_18px.svg);
+    width: 15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    background-size: 15px 15px;
+    cursor: pointer;
+}
+
+.go-fullscreen {
+    background-image: url(icons/fs.svg);
+    width: 15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-size: 15px 15px;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.CodeMirror {
+    border: 1px solid #a6a6a6;
+    border-right: 1px solid transparent;
+    border-top: 1px solid transparent;
+}
+
+.CodeMirror-focused {
+    border: 1px solid #4c9ed9;
+    border-right: 1px solid #4c9ed9;
+    border-top: 1px solid #4c9ed9;
+}
+
+#log {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    display: visible;
+}
+
+.compiled {
+    background-color: #2fb600;
+    color: #dcdccc;
+}
+
+.not-compiled {
+    background-color: #b60000;
+    color: #dcdccc;
+}
+
+#settingsPanel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #3f3f3f;
+    padding: 30px;
+    display: none;
+}
+
+#settingsPanel h1 {
+    margin-bottom: 10px;
+}
+
+#settingsPanel input[type='checkbox'] {
+    margin-right: 5px;
+}
+
+#toolbarContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 25px;
+    width: 200px;
+    background-color: #3f3f3f;
+}
+
+#toolbarContainer li {
+    width: 25px;
+    height: 25px;
+    float: left;
+}
+
+#toolbarContainer a {
+    width: 21px;
+    height: 21px;
+    margin: 2px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+}
+
+#settingsButton {
+    background-image: url(icons/gears.svg);
+}
+
+#highlightButton {
+    background-image: url(icons/eye.svg);
+}
+
+.vertical #shadereditor-panel {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: auto;
+    width: 100%;
+    height: 50%;
+}
+
+.vertical #shadereditor-panel {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    top: auto;
+    width: 100%;
+}
+
+#textures {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: #3f3f3f;
+    overflow: auto;
+}
+
+#textures .textureElement {
+    width: 128px;
+    height: 128px;
+    margin: 10px 0 0 10px;
+    float: left;
+    position: relative;
+    border: 1px solid black;
+}
+
+#textures img {
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#textures .dropzone,
+#textures input[type='file'] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#rbgl-tabs {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 30px;
+    background-color: #3f3f3f;
+    border-bottom: 1px solid #a6a6a6;
+}
+
+#rbgl-tab-container {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    right: 0;
+    bottom: 0;
+}
+
+#rbgl-tabs li {
+    float: left;
+    height: 30px;
+    padding: 0 20px;
+    line-height: 30px;
+    cursor: pointer;
+    border: none;
+    border-bottom: 1px solid #a6a6a6;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#rbgl-tabs li.active {
+    font-weight: bold;
+    border: 1px solid #a6a6a6;
+    border-bottom: 1px solid #eee;
+}
+
+.rbgl-tab {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.rbgl-tab.active {
+    display: block;
+}
+
+.rbgl-tab-content {
+    padding: 20px;
+    line-height: 1.4em;
+}
+
+.rbgl-tab-content h1 {
+    margin-bottom: 1em;
+}
+
+.rbgl-tab-content label {
+    margin-left: 0.5em;
+}
+
+#textures {
+    display: none;
+}
+
+.CodeMirror-focused .cm-matchhighlight {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFklEQVQI12NgYGBgkKzc8x9CMDAwAAAmhwSbidEoSQAAAABJRU5ErkJggg==);
+    background-position: bottom;
+    background-repeat: repeat-x;
+}
+
+.CodeMirror-selection-highlight-scrollbar {
+    background-color: lightblue;
+}
+
+.ge_assing_marker {
+    margin-left: -10px;
+    color: var(--ui-highlight-color);
+}
+
+.ge_assing_marker_on {
+    margin-left: -10px;
+    color: red;
+}
+
+.ge_assing_marker:hover {
+    color: red;
+}
+
+/* html,
+ body {
+     height: 100%;
+ }
+ 
+ body {
+     padding: 8px;
+     background-color: #F6F6F6;
+     box-sizing: border-box;
+ } */
+
+.splitH {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+.splitV {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.content {
+    border: 1px solid #c0c0c0;
+    box-shadow: inset 0 1px 2px #e4e4e4;
+    background-color: #fff;
+}
+
+.gutter {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+    cursor: col-resize;
+    background-image: url('../grips/vertical.png');
+}
+
+.gutter.gutter-vertical {
+    cursor: row-resize;
+    background-image: url('../grips/horizontal.png');
+}
+
+.split.split-vertical,
+.gutter.gutter-vertical {
+    width: 100%;
+    float: left;
+}
+
+.split.split-horizontal,
+.gutter.gutter-horizontal {
+    height: 100%;
+    float: left;
+}
+#tree,
+#doccontainer {
+    height: 100%;
+    float: left;
+}
+#editor,
+#treedoc {
+    height: 100%;
+}
